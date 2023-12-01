@@ -1,0 +1,84 @@
+openapi: 3.0.3
+info:
+  title: Dokumen API Cloud Function - OpenAPI 3.0
+  description: >-
+    Dokumen API Cloud Function Aplikasi Pencatatan Keuangan Harian Billblis
+  termsOfService: https://github.com/billblis/swagger
+  contact:
+    email: pedirasyaila@gmail.com
+  license:
+    name: Billblis Package
+    url: https://pkg.go.dev/github.com/billblis/billblis_be
+  version: 1.0.11
+externalDocs:
+  description: Repo GCF
+  url: https://github.com/billblis/billblis_gcf
+servers:
+  - url: https://asia-southeast2-xenon-hawk-402203.cloudfunctions.net
+tags:
+  - name: Auth
+    description: Auth to Access to API
+    externalDocs:
+      description: Deskripsi dan Kode Program
+      url: https://github.com/billblis/billblis_gcf/tree/main/post-login
+
+paths:
+  /Login:
+    post:
+      tags:
+        - Auth
+      summary: Login get Token
+      description: Login and Get User Token
+      operationId: authService
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Login"
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthResponse"
+        "405":
+          description: Invalid input
+
+components:
+  schemas:
+    Login:
+      type: object
+      properties:
+        email:
+          type: string
+          example: yourmail@gmail.com
+        password:
+          type: string
+          example: secret
+    AuthResponse:
+      type: object
+      properties:
+        status:
+          type: bool
+          example: true
+        message:
+          type: string
+          example: message
+        token:
+          type: string
+          example: token
+
+requestBodies:
+  AuthReq:
+    description: Request Authentication
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/Login"
+
+securitySchemes:
+  token:
+    type: apiKey
+    name: Authorization
+    in: header
