@@ -418,7 +418,8 @@ components:
           type: string
           example: 02-12-2023
         jumlah_masuk:
-          type: int
+          type: integer
+          example: 200000
         sumber:
           type: string
           example: bisnis
@@ -442,7 +443,8 @@ components:
               type: string
               example: 02-12-2023
             jumlah_masuk:
-              type: int
+              type: integer
+              example: 200000
             sumber:
               type: string
               example: bisnis
@@ -457,7 +459,8 @@ components:
           type: string
           example: 04-12-2023
         jumlah_keluar:
-          type: int
+          type: integer
+          example: 10000
         sumber:
           type: string
           example: konsumsi
@@ -481,7 +484,8 @@ components:
               type: string
               example: 04-12-2023
             jumlah_keluar:
-              type: int
+              type: integer
+              example: 10000
             sumber:
               type: string
               example: konsumsi
