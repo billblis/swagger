@@ -193,7 +193,7 @@ paths:
       parameters:
         - name: _id
           in: query
-          description: "Masukkan ID user yang ingin di update."
+          description: "Masukkan ID pemsukan yang ingin di update."
           required: true
           schema:
             type: string
@@ -244,7 +244,6 @@ paths:
             - write: apiKey
             - read: apiKey
 
-  
   /insertPengeluaran:
     post:
       tags:
@@ -326,7 +325,7 @@ paths:
       parameters:
         - name: _id
           in: query
-          description: "Masukkan ID user yang ingin di update."
+          description: "Masukkan ID pengeluaran yang ingin di update."
           required: true
           schema:
             type: string
