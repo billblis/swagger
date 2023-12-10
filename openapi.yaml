@@ -193,7 +193,7 @@ paths:
       parameters:
         - name: _id
           in: query
-          description: "Masukkan ID pemsukan yang ingin di update."
+          description: "Masukkan ID pemasukan yang ingin di update."
           required: true
           schema:
             type: string
