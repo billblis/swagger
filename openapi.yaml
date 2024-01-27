@@ -419,7 +419,7 @@ components:
           example: renjun@gmail.com
         phonenumber:
           type: string
-          example: 625921006700
+          example: 6285921006700
         username:
           type: string
           example: renjun
