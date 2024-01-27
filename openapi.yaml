@@ -115,7 +115,7 @@ paths:
   /changePass:
     put:
       tags:
-        - Auth
+        - User
       summary: Change Password
       description: Change Password
       operationId: changepass
