@@ -112,7 +112,6 @@ paths:
             - write: apiKey
             - read: apiKey
 
-  /changePass:
     put:
       tags:
         - User
