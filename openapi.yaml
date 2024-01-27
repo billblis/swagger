@@ -113,36 +113,37 @@ paths:
             - read: apiKey
 
   /changePass:
-    tags:
-      - Auth
-    summary: Change Password
-    description: Change Password
-    operationId: changepass
-    parameters:
-      - name: username
-        in: query
-        description: "Masukkan username user yang ingin di ganti passwordnya."
-        required: true
-        schema:
-          type: string
-    requestBody:
-      content:
-        application/json:
+    put:
+      tags:
+        - Auth
+      summary: Change Password
+      description: Change Password
+      operationId: changepass
+      parameters:
+        - name: username
+          in: query
+          description: "Masukkan username user yang ingin di ganti passwordnya."
+          required: true
           schema:
-            $ref: "#/components/schemas/ChangePassUser"
-    responses:
-      "200":
-        description: successful operation
+            type: string
+      requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/UserResponse"
-      "405":
-        description: Invalid input
-    security:
-      - token:
-          - write: apiKey
-          - read: apiKey
+              $ref: "#/components/schemas/ChangePassUser"
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserResponse"
+        "405":
+          description: Invalid input
+      security:
+        - token:
+            - write: apiKey
+            - read: apiKey
 
   /insertPemasukan:
     post:
