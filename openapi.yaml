@@ -112,7 +112,7 @@ paths:
             - write: apiKey
             - read: apiKey
 
-  /login/{user}:
+  /BillblisUser:
     put:
       tags:
         - User
