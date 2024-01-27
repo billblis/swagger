@@ -114,7 +114,7 @@ paths:
 
   /changePass:
     tags:
-      - User
+      - Auth
     summary: Change Password
     description: Change Password
     operationId: changepass
